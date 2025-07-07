@@ -18,7 +18,10 @@
 	border-right: 1px solid #346;
 	border-bottom: 1px solid #346;
 	text-align: center;
-	align-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-text)
 }
 
 .cell-blue,

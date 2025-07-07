@@ -1,0 +1,58 @@
+.table.one {
+	grid-template-rows: 35px repeat(5, 80px);
+}
+.table.two {
+	grid-template-rows:
+		35px repeat(5, 80px)
+		35px repeat(5, 80px);
+}
+.table.three {
+	grid-template-rows:
+		35px repeat(5, 80px)
+		35px repeat(5, 80px)
+		35px repeat(5, 80px);
+}
+.table div,
+.table a {
+	padding: 8px;
+	border-right: 1px solid #346;
+	border-bottom: 1px solid #346;
+	text-align: center;
+	align-content: center;
+}
+
+.cell-blue,
+.cell-cyan,
+.cell-green,
+.cell-pink,
+.cell-purple,
+.cell-red,
+.cell-red,
+.cell-yellow {
+	color: #fff;
+}
+
+.cell-blue {
+	background-color: #134f5c;
+}
+.cell-cyan {
+	background-color: #38c;
+}
+.cell-red {
+	background-color: #990000;
+}
+.cell-green {
+	background-color: #38761d;
+}
+.cell-pink {
+	background-color: #ea4335;
+}
+.cell-purple {
+	background-color: #317;
+}
+.cell-yellow {
+	background-color: #e69138;
+}
+.cell-white {
+	background-color: #fff;
+}

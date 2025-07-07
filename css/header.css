@@ -1,0 +1,29 @@
+header {
+	background: var(--background-main);
+	height: 46px;
+	display: grid;
+	grid-template-columns: 1fr min-content;
+}
+header nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+}
+header a {
+	padding: 5px;
+	color: var(--color-link);
+}
+
+header nav svg,
+header nav button {
+	height: 30px;
+	cursor: pointer;
+	margin: 0 10px;
+}
+header nav svg[viewbox="0 0 100 100"] {
+	fill: var(--color-text);
+}
+header nav svg[viewbox="0 0 24 24"] {
+	stroke: var(--color-text);
+}

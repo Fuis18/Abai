@@ -77,7 +77,7 @@ a {
 
 .table {
 	display: grid;
-	grid-template-columns: repeat(8, 160px);
+	grid-template-columns: repeat(8, 150px);
 	border-left: 1px solid #346;
 	border-top: 1px solid #346;
 }

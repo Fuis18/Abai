@@ -12,6 +12,19 @@
 		35px repeat(5, 80px)
 		35px repeat(5, 80px);
 }
+
+.table {
+	display: grid;
+	border-left: 1px solid #346;
+	border-top: 1px solid #346;
+}
+.table.link {
+	grid-template-columns: repeat(8, 150px);
+}
+.table.mini {
+	grid-template-columns: repeat(3, 1fr);
+}
+
 .table div,
 .table a {
 	padding: 8px;
@@ -19,6 +32,9 @@
 	border-bottom: 1px solid #346;
 	text-align: center;
 	color: var(--color-text)
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .table .private-title, .table .private-card {
 	border: none;
@@ -27,12 +43,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
-}
-.table.link div,
-.table.link a {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .cell-blue,

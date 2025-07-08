@@ -83,7 +83,7 @@ a {
 .table.link {
 	grid-template-columns: repeat(8, 150px);
 }
-.table.min {
+.table.mini {
 	grid-template-columns: repeat(3, 1fr);
 }
 

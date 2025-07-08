@@ -77,15 +77,14 @@ a {
 
 .table {
 	display: grid;
-	grid-template-columns: repeat(8, 150px);
 	border-left: 1px solid #346;
 	border-top: 1px solid #346;
 }
-.min-table {
-	display: grid;
+.table.link {
+	grid-template-columns: repeat(8, 150px);
+}
+.table.min {
 	grid-template-columns: repeat(3, 1fr);
-	border-left: 1px solid #346;
-	border-top: 1px solid #346;
 }
 
 .choose_function {

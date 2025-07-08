@@ -37,14 +37,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 }
 .table .private-title, .table .private-card {
 	border: none;
-}
-.table .private-card {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
 }
 
 .cell-blue,

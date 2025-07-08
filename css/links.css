@@ -39,6 +39,9 @@
 	justify-content: center;
 	flex-direction: column;
 }
+.private-card p {
+	margin-bottom: 5px;
+}
 .table .private-title, .table .private-card {
 	border: none;
 }

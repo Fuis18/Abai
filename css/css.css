@@ -81,6 +81,13 @@ a {
 	border-left: 1px solid #346;
 	border-top: 1px solid #346;
 }
+.min-table {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	border-left: 1px solid #346;
+	border-top: 1px solid #346;
+}
+
 .choose_function {
 	display: flex;
 	flex-wrap: wrap;

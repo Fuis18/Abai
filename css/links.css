@@ -32,6 +32,8 @@
 	border-bottom: 1px solid #346;
 	text-align: center;
 	color: var(--color-text);
+}
+.private-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;

@@ -23,6 +23,11 @@
 .table .private-title, .table .private-card {
 	border: none;
 }
+.table .private-card {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
 .table.link div,
 .table.link a {
 	display: flex;

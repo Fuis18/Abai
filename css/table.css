@@ -1,0 +1,94 @@
+.table.one {
+	grid-template-rows: 35px repeat(5, 80px);
+}
+.table.two {
+	grid-template-rows:
+		35px repeat(5, 80px)
+		35px repeat(5, 80px);
+}
+.table.three {
+	grid-template-rows:
+		35px repeat(5, 80px)
+		35px repeat(5, 80px)
+		35px repeat(5, 80px);
+}
+
+.table {
+	display: grid;
+	border-left: 1px solid #346;
+	border-top: 1px solid #346;
+}
+.table.link {
+	grid-template-columns: repeat(8, 150px);
+}
+.table.mini {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.table div,
+.table a {
+	padding: 6px 8px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.table.link div,
+.table.link a,
+.private-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-right: 1px solid #346;
+	border-bottom: 1px solid #346;
+}
+
+.private-container {
+	flex-direction: column;
+}
+
+.private-title {
+	color: var(--color-title);
+}
+.private-card {
+	color: var(--color-text);
+}
+.private-card p {
+	margin-bottom: 5px;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.cell.blue,
+.cell.cyan,
+.cell.green,
+.cell.pink,
+.cell.purple,
+.cell.red,
+.cell.red,
+.cell.yellow {
+	color: #fff;
+}
+
+.cell.blue {
+	background-color: #134f5c;
+}
+.cell.cyan {
+	background-color: #38c;
+}
+.cell.red {
+	background-color: #990000;
+}
+.cell.green {
+	background-color: #38761d;
+}
+.cell.pink {
+	background-color: #ea4335;
+}
+.cell.purple {
+	background-color: #317;
+}
+.cell.yellow {
+	background-color: #e69138;
+}
+.cell.white {
+	background-color: #fff;
+}

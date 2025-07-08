@@ -75,18 +75,6 @@ a {
 	color: var(--color-link);
 }
 
-.table {
-	display: grid;
-	border-left: 1px solid #346;
-	border-top: 1px solid #346;
-}
-.table.link {
-	grid-template-columns: repeat(8, 150px);
-}
-.table.mini {
-	grid-template-columns: repeat(3, 1fr);
-}
-
 .choose_function {
 	display: flex;
 	flex-wrap: wrap;

@@ -80,6 +80,24 @@ button {
 	cursor: pointer;
 }
 
+.login-overlay {
+    background: #0006;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+}
+.login-form {
+    background: var(--background-side);
+    display: grid;
+    margin: 4px 6px;
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+}
+
 .choose_function {
 	display: flex;
 	flex-wrap: wrap;

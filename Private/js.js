@@ -47,7 +47,7 @@ let sign = false;
 const validateForm = (user,pass) => {
 	console.log(CREDENTIALS.user,user)
 	console.log(CREDENTIALS.pass,pass)
-	if (CREDENTIALS.user == user && CREDENTIALS.pass == pass) {
+	if (CREDENTIALS.user == user && CREDENTIALS.passworrd == pass) {
 		localStorage.setItem("login", "login");
 		createData();
 		return true;

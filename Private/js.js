@@ -100,8 +100,8 @@ const renderLoginForm = () => {
     form.appendChild(closeButton);
     form.appendChild(userContainer);
     form.appendChild(passContainer);
-    form.appendChild(sendButton);
     form.appendChild(messageElement);
+    form.appendChild(sendButton);
     bg.appendChild(form);
     document.body.appendChild(bg);
 

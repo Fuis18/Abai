@@ -81,7 +81,7 @@ if (localStorage.getItem("login") == "sign") {
 			document.body.removeChild(form);
 		} else {
 			let message = document.createElement("span");
-			let message.textContext = "¡Datos inválidos!";
+			message.textContext = "¡Datos inválidos!";
 		}
 	});
 	userContainer.appendChild(userLabel);

@@ -47,6 +47,7 @@ const validateCredentials = (user, pass) => {
 };
 
 const renderLoginForm = () => {
+    console.log("a")
     const bg = document.createElement("div");
     bg.classList.add("login-overlay");
     const form = document.createElement("div");
@@ -60,6 +61,7 @@ const renderLoginForm = () => {
     });
 
     const createInputContainer = (labelText, inputType = "text") => {
+        console.log("a")
         const container = document.createElement("div");
         container.classList.add("input-group");
 
@@ -84,6 +86,7 @@ const renderLoginForm = () => {
     sendButton.classList.add("submit-button");
 
     sendButton.addEventListener("click", () => {
+	console.log("a")
         if (validateCredentials(userInput.value, passInput.value)) {
             localStorage.setItem("login", "loggedIn");
             bg.remove();
@@ -108,8 +111,10 @@ const renderLoginForm = () => {
 const loginStatus = localStorage.getItem("login");
 
 if (!loginStatus || loginStatus === "signedOut") {
+    console.log("a")
     localStorage.setItem("login", "signedOut");
     renderLoginForm();
 } else if (loginStatus === "loggedIn") {
+    console.log("b")
     renderDataCards();
 }

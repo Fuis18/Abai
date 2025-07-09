@@ -86,10 +86,12 @@ if (login === null) {
 	});
 	userContainer.appendChild(userLabel);
 	userContainer.appendChild(userInput);
+	form.appendChild(close);
 	passContainer.appendChild(passLabel);
 	passContainer.appendChild(passInput);
 	form.appendChild(userContainer);
 	form.appendChild(passContainer);
+	form.appendChild(send);
 	bg.appendChild(form);
 	document.body.appendChild(bg);
 }

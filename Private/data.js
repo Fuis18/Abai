@@ -1,6 +1,6 @@
 export const CREDENTIALS = {
 	user: "F18",
-	passworrd: "Admin18"
+	password: "Admin18"
 }
 
 export const BIG_DATA = [

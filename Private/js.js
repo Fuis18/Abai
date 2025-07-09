@@ -42,4 +42,57 @@ const createData = () => {
 	}
 };
 
-createData();
+let login = localStorage.getItem("login");
+let sign = false;
+
+const validateForm = (user,pass) => {
+	if (CREDENTIALS.user == user && CREDENTIALS.pass == pass) {
+		localStorage.setItem("login", "login");
+		createData();
+		return true;
+	}
+	return false;
+}
+
+if (login === null) {
+	localStorage.setItem("login", "sign");
+} else if (login == "sign") {
+	let bg = document.createElement("div");
+	let form = document.createElement("div");
+	let userContainer = document.createElement("div");
+	let close = document.createElement("button");
+	close.textContent = "X";
+	close.addEventListener("click", () => {
+		window.navigation.navigate("../");
+	});
+	let userLabel = document.createElement("label");
+	userLabel.textContent = "User";
+	let userInput = document.createElement("input");
+	let passContainer = document.createElement("div");
+	let passLabel = document.createElement("label");
+	passLabel.textContent = "Password";
+	let passInput = document.createElement("input");
+	let send = document.createElement("button");
+	send.type = "submit";
+	send.textContext = "Loggearse";
+	send.addEventListener("click", () => {
+		sign = validateForm(userInput.value, passInput.value);
+		if (sign) {
+			document.body.removeChild(form);
+		} else {
+			let message = document.createElement("span");
+			let message.textContext = "¡Datos inválidos!";
+		}
+	});
+	userContainer.appendChild(userLabel);
+	userContainer.appendChild(userInput);
+	passContainer.appendChild(passLabel);
+	passContainer.appendChild(passInput);
+	form.appendChild(userContainer);
+	form.appendChild(passContainer);
+	bg.appendChild(form);
+	document.body.appendChild(bg);
+}
+if (login == "login") {
+	createData();
+}

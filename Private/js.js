@@ -78,10 +78,13 @@ if (localStorage.getItem("login") == "sign") {
 	send.addEventListener("click", () => {
 		sign = validateForm(userInput.value, passInput.value);
 		if (sign) {
-			document.body.removeChild(form);
+			document.body.removeChild(bg);
+			localStorage.setItem("login", "login");
+			createData();
 		} else {
 			let message = document.createElement("span");
 			message.textContext = "¡Datos inválidos!";
+			passContainer.appendChild(message);
 		}
 	});
 	userContainer.appendChild(userLabel);

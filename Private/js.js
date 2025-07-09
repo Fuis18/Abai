@@ -42,62 +42,79 @@ const createData = () => {
 	}
 };
 
-let sign = false;
+const validateCredentials = (user, pass) => {
+    return CREDENTIALS.user === user && CREDENTIALS.password === pass;
+};
 
-const validateForm = (user,pass) => {
-	if (CREDENTIALS.user == user && CREDENTIALS.passworrd == pass) {
-		localStorage.setItem("login", "login");
-		createData();
-		return true;
-	}
-	return false;
-}
+const renderLoginForm = () => {
+    const bg = document.createElement("div");
+    bg.classList.add("login-overlay");
+    const form = document.createElement("div");
+    form.classList.add("login-form");
 
-if (localStorage.getItem("login") === null) {
-	localStorage.setItem("login", "sign");
-}
-if (localStorage.getItem("login") == "sign") {
-	let bg = document.createElement("div");
-	let form = document.createElement("div");
-	let userContainer = document.createElement("div");
-	let close = document.createElement("button");
-	close.textContent = "X";
-	close.addEventListener("click", () => {
-		window.navigation.navigate("../");
-	});
-	let userLabel = document.createElement("label");
-	userLabel.textContent = "User";
-	let userInput = document.createElement("input");
-	let passContainer = document.createElement("div");
-	let message = document.createElement("span");
-	let passLabel = document.createElement("label");
-	passLabel.textContent = "Password";
-	let passInput = document.createElement("input");
-	let send = document.createElement("button");
-	send.textContent = "Loggearse";
-	send.addEventListener("click", () => {
-		sign = validateForm(userInput.value, passInput.value);
-		if (sign) {
-			document.body.removeChild(bg);
-			localStorage.setItem("login", "login");
-			createData();
-		} else {
-			message.textContent = "¡Datos inválidos!";
-		}
-	});
-	userContainer.appendChild(userLabel);
-	userContainer.appendChild(userInput);
-	form.appendChild(close);
-	passContainer.appendChild(passLabel);
-	passContainer.appendChild(passInput);
-	passContainer.appendChild(message);
-	form.appendChild(userContainer);
-	form.appendChild(passContainer);
-	form.appendChild(send);
-	bg.appendChild(form);
-	document.body.appendChild(bg);
-}
-if (localStorage.getItem("login") == "login" || sign == true) {
-	sign = true;
-	createData();
-}
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "X";
+    closeButton.classList.add("close-button");
+    closeButton.addEventListener("click", () => {
+        window.location.href = "../";
+    });
+
+    const createInputContainer = (labelText, inputType = "text") => {
+        const container = document.createElement("div");
+        container.classList.add("input-group");
+
+        const label = document.createElement("label");
+        label.textContent = labelText;
+
+        const input = document.createElement("input");
+        input.type = inputType;
+
+        container.appendChild(label);
+        container.appendChild(input);
+        return { container, input };
+    };
+
+    const { container: userContainer, input: userInput } = createInputContainer("Usuario");
+    const { container: passContainer, input: passInput } = createInputContainer("Contraseña", "password");
+
+    const messageElement = document.createElement("span");
+
+    const sendButton = document.createElement("button");
+    sendButton.textContent = "Ingresar";
+    sendButton.classList.add("submit-button");
+
+    sendButton.addEventListener("click", () => {
+        if (validateCredentials(userInput.value, passInput.value)) {
+            localStorage.setItem("login", "loggedIn");
+            bg.remove();
+            renderDataCards();
+        } else {
+            messageElement.textContent = "¡Credenciales inválidas! Intenta de nuevo.";
+            messageElement.style.color = "red";
+        }
+    });
+
+    form.appendChild(closeButton);
+    form.appendChild(userContainer);
+    form.appendChild(passContainer);
+    form.appendChild(sendButton);
+    form.appendChild(messageElement);
+    bg.appendChild(form);
+    document.body.appendChild(bg);
+
+    // Enfoca el primer campo de entrada para mejor UX
+    userInput.focus();
+};
+
+// --- Lógica principal ---
+
+document.addEventListener('DOMContentLoaded', () => {
+    const loginStatus = localStorage.getItem("login");
+
+    if (!loginStatus || loginStatus === "signedOut") {
+        localStorage.setItem("login", "signedOut");
+        renderLoginForm();
+    } else if (loginStatus === "loggedIn") {
+        renderDataCards();
+    }
+});

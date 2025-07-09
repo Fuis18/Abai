@@ -91,9 +91,6 @@ button {
 }
 .login-form {
     background: var(--background-side);
-    display: grid;
-    margin: 4px 6px;
-    width: 100%;
     padding: 10px;
     margin: auto;
 }

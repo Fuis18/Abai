@@ -42,7 +42,6 @@ const createData = () => {
 	}
 };
 
-let login = localStorage.getItem("login");
 let sign = false;
 
 const validateForm = (user,pass) => {
@@ -54,9 +53,10 @@ const validateForm = (user,pass) => {
 	return false;
 }
 
-if (login === null) {
+if (localStorage.getItem("login") === null) {
 	localStorage.setItem("login", "sign");
-} else if (login == "sign") {
+}
+if (localStorage.getItem("login") == "sign") {
 	let bg = document.createElement("div");
 	let form = document.createElement("div");
 	let userContainer = document.createElement("div");
@@ -95,6 +95,7 @@ if (login === null) {
 	bg.appendChild(form);
 	document.body.appendChild(bg);
 }
-if (login == "login") {
+if (localStorage.getItem("login") == "login" || sign = true) {
+	sign = true;
 	createData();
 }

@@ -45,8 +45,6 @@ const createData = () => {
 let sign = false;
 
 const validateForm = (user,pass) => {
-	console.log(CREDENTIALS.user,user)
-	console.log(CREDENTIALS.pass,pass)
 	if (CREDENTIALS.user == user && CREDENTIALS.passworrd == pass) {
 		localStorage.setItem("login", "login");
 		createData();
@@ -78,9 +76,7 @@ if (localStorage.getItem("login") == "sign") {
 	let send = document.createElement("button");
 	send.textContent = "Loggearse";
 	send.addEventListener("click", () => {
-		console.log("Click")
 		sign = validateForm(userInput.value, passInput.value);
-		console.log(sign, userInput.value, passInput.value)
 		if (sign) {
 			document.body.removeChild(bg);
 			localStorage.setItem("login", "login");

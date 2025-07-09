@@ -45,6 +45,8 @@ const createData = () => {
 let sign = false;
 
 const validateForm = (user,pass) => {
+	console.log(CREDENTIALS.user,user)
+	console.log(CREDENTIALS.pass,pass)
 	if (CREDENTIALS.user == user && CREDENTIALS.pass == pass) {
 		localStorage.setItem("login", "login");
 		createData();
@@ -69,6 +71,7 @@ if (localStorage.getItem("login") == "sign") {
 	userLabel.textContent = "User";
 	let userInput = document.createElement("input");
 	let passContainer = document.createElement("div");
+	let message = document.createElement("span");
 	let passLabel = document.createElement("label");
 	passLabel.textContent = "Password";
 	let passInput = document.createElement("input");
@@ -82,9 +85,7 @@ if (localStorage.getItem("login") == "sign") {
 			localStorage.setItem("login", "login");
 			createData();
 		} else {
-			let message = document.createElement("span");
-			message.textContext = "¡Datos inválidos!";
-			passContainer.appendChild(message);
+			message.textContent = "¡Datos inválidos!";
 		}
 	});
 	userContainer.appendChild(userLabel);
@@ -92,6 +93,7 @@ if (localStorage.getItem("login") == "sign") {
 	form.appendChild(close);
 	passContainer.appendChild(passLabel);
 	passContainer.appendChild(passInput);
+	passContainer.appendChild(message);
 	form.appendChild(userContainer);
 	form.appendChild(passContainer);
 	form.appendChild(send);

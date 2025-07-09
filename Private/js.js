@@ -102,19 +102,14 @@ const renderLoginForm = () => {
     bg.appendChild(form);
     document.body.appendChild(bg);
 
-    // Enfoca el primer campo de entrada para mejor UX
     userInput.focus();
 };
 
-// --- Lógica principal ---
+const loginStatus = localStorage.getItem("login");
 
-document.addEventListener('DOMContentLoaded', () => {
-    const loginStatus = localStorage.getItem("login");
-
-    if (!loginStatus || loginStatus === "signedOut") {
-        localStorage.setItem("login", "signedOut");
-        renderLoginForm();
-    } else if (loginStatus === "loggedIn") {
-        renderDataCards();
-    }
-});
+if (!loginStatus || loginStatus === "signedOut") {
+    localStorage.setItem("login", "signedOut");
+    renderLoginForm();
+} else if (loginStatus === "loggedIn") {
+    renderDataCards();
+}

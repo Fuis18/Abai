@@ -76,10 +76,11 @@ if (localStorage.getItem("login") == "sign") {
 	passLabel.textContent = "Password";
 	let passInput = document.createElement("input");
 	let send = document.createElement("button");
-	send.type = "submit";
-	send.textContext = "Loggearse";
+	send.textContent = "Loggearse";
 	send.addEventListener("click", () => {
+		console.log("Click")
 		sign = validateForm(userInput.value, passInput.value);
+		console.log(sign, userInput.value, passInput.value)
 		if (sign) {
 			document.body.removeChild(bg);
 			localStorage.setItem("login", "login");

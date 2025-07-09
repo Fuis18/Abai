@@ -95,7 +95,7 @@ if (localStorage.getItem("login") == "sign") {
 	bg.appendChild(form);
 	document.body.appendChild(bg);
 }
-if (localStorage.getItem("login") == "login" || sign = true) {
+if (localStorage.getItem("login") == "login" || sign == true) {
 	sign = true;
 	createData();
 }

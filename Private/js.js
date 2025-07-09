@@ -1,6 +1,6 @@
 import { CREDENTIALS, BIG_DATA } from './data.js';
 
-const createData = () => {
+const renderDataCards = () => {
 	let table = document.querySelector(".table");
 	for (let i = 0; i < BIG_DATA.length; i++) {
 		let data = BIG_DATA[i];
@@ -111,10 +111,8 @@ const renderLoginForm = () => {
 const loginStatus = localStorage.getItem("login");
 
 if (!loginStatus || loginStatus === "signedOut") {
-    console.log("a")
     localStorage.setItem("login", "signedOut");
     renderLoginForm();
 } else if (loginStatus === "loggedIn") {
-    console.log("b")
     renderDataCards();
 }

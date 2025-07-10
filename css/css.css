@@ -93,8 +93,18 @@ button {
     background: var(--background-side);
     padding: 10px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+	gap: 5px
 }
-
+.close-button {
+	align-self: flex-end;
+	gap: 5px;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
 .choose_function {
 	display: flex;
 	flex-wrap: wrap;

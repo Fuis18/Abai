@@ -375,7 +375,7 @@ NAC:   `,
 		password: "Luis018Rmn",
 	},
 	{
-		title: "smartlearning.abaigroup.com/moodle/",
+		title: "Moodle",
 		user: "luis.roman.pe",
 		password: "Abai2024$",
 	},

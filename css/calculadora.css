@@ -85,7 +85,7 @@
 	min-height: 50px;
 	border-left: 3px solid #ccc;
 	padding-left: 10px;
-	color: #ccc;
+	color: var(--color-text);
 }
 @keyframes animate-blink {
 	0% {
